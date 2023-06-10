@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const TopClassCard = ({ dat }) => {
   const { category, students, img } = dat;
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact w-96 bg-base-100 shadow-xl lg:hover-card">
       <figure>
         <img src={img} alt={category} />
       </figure>

@@ -4,6 +4,9 @@
 
 @layer components {
   .hover-reasons {
-    @apply hover:cursor-pointer hover:bg-orange-700 hover:scale-105 transition-all duration-300 hover:text-white;
+    @apply hover:cursor-pointer hover:bg-orange-700 hover:scale-[1.01] transition-all duration-300 hover:text-white;
+  }
+  .hover-card {
+    @apply hover:cursor-pointer hover:scale-[1.03] transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50;
   }
 }
