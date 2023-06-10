@@ -1,0 +1,7 @@
+.banner-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://i.ibb.co/SBfHcvY/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 150px;
+}
