@@ -2,23 +2,21 @@ import { useEffect, useState } from "react";
 import TopClassCard from "./TopClassCard";
 
 const TopClass = () => {
-  const [movies, setMovies] = useState([]);
+  const [showData, setShowData] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/smhasnanmonir/API-Testing/main/movie-class.json"
-    )
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => {
-        setMovies(data);
+        setShowData(data);
       });
   }, []);
-  console.log(movies);
+  console.log(showData);
   return (
     <div>
-      <h1 className="text-3xl text-center my-[35px]">Our Top Classes</h1>
+      <h1 className="text-3xl text-center my-[55px]">Our Top Classes</h1>
       <div className="grid grid-cols-1 gap-5 mx-auto md:grid-cols-3 max-w-7xl">
-        {movies.map((movie) => (
-          <TopClassCard key={movie.category} movie={movie}></TopClassCard>
+        {showData.map((dat) => (
+          <TopClassCard key={dat.category} dat={dat}></TopClassCard>
         ))}
       </div>
     </div>

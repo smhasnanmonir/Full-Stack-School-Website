@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "Ola Murphy",
+    "description": "Ola Murphy is a charismatic movie teacher known for his captivating storytelling and deep knowledge of cinema. His passion for film inspires students to explore the art form with curiosity and creativity",
+    "students": 30,
+    "price": 1500,
+    "img": "https://iili.io/H4tieJs.jpg"
+  },
+  {
+    "name": "Dana Blevins",
+    "description": "Dana Blevins is a dedicated movie teacher who brings a unique blend of expertise and enthusiasm to his classroom. His dynamic teaching style fosters a deep appreciation for film among his students.",
+    "students": 25,
+    "price": 1500,
+    "img": "https://iili.io/H4t6myx.jpg"
+  },
+  {
+    "name": "Mitch Shortn",
+    "description": "Mitch Shortn is a passionate movie teacher with an infectious love for storytelling. Known for his engaging teaching methods, he empowers students to analyze, appreciate, and create their own cinematic masterpieces.",
+    "students": 23,
+    "price": 1500,
+    "img": "https://iili.io/H4t6DYb.jpg"
+  },
+  {
+    "name": "Lawrence Peterson",
+    "description": "Lawrence Peterson is an accomplished movie teacher who possesses a deep understanding of film theory and history. With his engaging teaching style, he inspires students to critically analyze movies and explore the nuances of cinematic storytelling.",
+    "students": 21,
+    "price": 1500,
+    "img": "https://iili.io/H4t6t3u.jpg"
+  },
+  {
+    "name": "Leandro Washington",
+    "description": "Leandro Washington is an exceptional movie teacher renowned for his extensive knowledge and passion for the art of cinema. With his engaging teaching style and insightful analysis, he ignites students' creativity and appreciation for the world of film.",
+    "students": 18,
+    "price": 1500,
+    "img": "https://iili.io/H4t6yTQ.jpg"
+  },
+  {
+    "name": "Cyril Estes",
+    "description": "Cyril Estes is an esteemed movie teacher, recognized for his expertise in film analysis and his ability to inspire students. With his dynamic teaching approach, he encourages critical thinking and cultivates a deep appreciation for the art of cinema among his students.",
+    "students": 15,
+    "price": 1500,
+    "img": "https://iili.io/H4t6bvj.jpg"
+  }
+]
