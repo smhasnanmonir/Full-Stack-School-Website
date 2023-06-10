@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import TopClass from "../TopClass/TopClass";
+import Reasons from "./Reasons/Reasons";
 import TopTeacher from "./TopTeacher/TopTeacher";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <Banner></Banner>
       <TopClass></TopClass>
       <TopTeacher></TopTeacher>
+      <Reasons></Reasons>
     </div>
   );
 };

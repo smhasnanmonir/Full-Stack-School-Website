@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .hover-reasons {
+    @apply hover:cursor-pointer hover:bg-orange-700 hover:scale-105 transition-all duration-300 hover:text-white;
+  }
+}
