@@ -8,13 +8,16 @@ const Header = () => {
           Home
         </Link>
         <Link className="text-xl font-bold hover:text-red-600" to="/class">
-          Book A Class
+          Classes
         </Link>
         <Link
           className="text-xl font-bold hover:text-red-600"
-          to="/order/salad"
+          to="/instructors"
         >
-          Order
+          Instructors
+        </Link>
+        <Link className="text-xl font-bold hover:text-red-600" to="/dashboard">
+          Dashboard
         </Link>
         <Link
           className="text-xl font-bold hover:text-red-600"

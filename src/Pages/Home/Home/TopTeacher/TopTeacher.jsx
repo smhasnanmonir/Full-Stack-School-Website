@@ -12,7 +12,7 @@ const TopTeacher = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-3xl text-center md:my-[65px]">Our Instructors</h1>
+      <h1 className="text-3xl text-center md:my-[65px]">Our Top Instructors</h1>
       <div className="grid grid-cols-1 gap-5 mx-auto md:grid-cols-3 max-w-7xl">
         {teachers.map((teacher) => (
           <TopTeacherCard key={teacher.name} teacher={teacher}></TopTeacherCard>

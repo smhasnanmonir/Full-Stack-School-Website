@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const TopTeacherCard = ({ teacher }) => {
   const { name, students, img } = teacher;
   return (
@@ -9,9 +11,13 @@ const TopTeacherCard = ({ teacher }) => {
         <h2 className="text-2xl font-bold">{name}</h2>
         <p className="text-[18px]">You will learn about movies from him.</p>
         <p className="text-[18px]">Student Enrolled: {students}</p>
-        <div className="card-actions">
-          <button className="btn btn-outline">Enroll Now</button>
-        </div>
+        <Link to="/instructors">
+          <div className="card-actions">
+            <button className="btn btn-outline">
+              Go to All instructor page
+            </button>
+          </div>
+        </Link>
       </div>
     </div>
   );

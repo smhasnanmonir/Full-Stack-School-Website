@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const TopClassCard = ({ dat }) => {
   const { category, students, img } = dat;
   return (
@@ -10,7 +12,11 @@ const TopClassCard = ({ dat }) => {
         <p className="text-[18px]">You will learn about {category} movies</p>
         <p className="text-[18px]">Student Enrolled: {students}</p>
         <div className="card-actions">
-          <button className="btn btn-outline">Enroll Now</button>
+          <Link to="/class">
+            <button className="btn btn-outline">
+              Go to All classes page to see more
+            </button>
+          </Link>
         </div>
       </div>
     </div>
