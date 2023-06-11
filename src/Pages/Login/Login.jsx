@@ -46,7 +46,7 @@ const Login = () => {
         </div>
       </div>
       <div className="grid place-items-center gap-3 mb-[55px]">
-        <Link className="btn btn-secondary text-black" to="/signup">
+        <Link className="btn btn-secondary text-black" to="/register">
           New? Sign Up
         </Link>
         <Link className="btn btn-success" to="/">

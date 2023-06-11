@@ -4,7 +4,7 @@ import TopTeacherCard from "./TopTeacherCard";
 const TopTeacher = () => {
   const [teachers, setTeacher] = useState([]);
   useEffect(() => {
-    fetch("instructor.json")
+    fetch("http://localhost:5000/instructors")
       .then((res) => res.json())
       .then((data) => {
         setTeacher(data);
