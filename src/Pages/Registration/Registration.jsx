@@ -1,16 +1,52 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Registration = () => {
+  const { emailRegistration, updateInfo } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
-    watch,
-    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
-    reset();
+  const onSubmit = (data) => {
+    emailRegistration(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from);
+        updateInfo(data.name, data.PhotoURL)
+          .then(() => {
+            const updated = { name: data.name, email: data.email };
+            console.log(updated);
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(updated),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                  navigate(from, { replace: true });
+                  Swal.fire("Registration Successful");
+                }
+              });
+          })
+          .catch((error) => console.log(error));
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire("Email Already in use.");
+      });
   };
   return (
     <div className="lg:w-[575px] w-[375px] my-[45px] mx-auto">

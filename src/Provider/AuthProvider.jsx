@@ -4,9 +4,9 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { app } from "../Firebase/firebase.config";
-import { set } from "react-hook-form";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -14,15 +14,23 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   //email login with password
-  const emailLogin = () => {
+  const emailLogin = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   //registration with email and password
-  const emailRegistration = () => {
+  const emailRegistration = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  //update registration information
+  const updateInfo = (name, PhotoURL) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: PhotoURL,
+    });
   };
 
   //auth information
@@ -32,7 +40,9 @@ const AuthProvider = ({ children }) => {
     loading,
     emailLogin,
     emailRegistration,
+    updateInfo,
   };
+  //update auth information
 
   //unsubscribe
   useEffect(() => {
