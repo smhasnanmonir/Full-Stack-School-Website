@@ -1,9 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Header = () => {
+  const handleLogOut = () => {
+    console.log("Log Out");
+  };
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const CommonNavbar = (
     <>
-      <div className="flex gap-[40px] items-center align-middle justify-center">
+      <div className="flex gap-[15px] items-center align-middle justify-center">
         <Link className="text-xl font-bold hover:text-red-600" to="/">
           Home
         </Link>
@@ -19,37 +26,29 @@ const Header = () => {
         <Link className="text-xl font-bold hover:text-red-600" to="/dashboard">
           Dashboard
         </Link>
-        <Link
-          className="text-xl font-bold hover:text-red-600"
-          to="/dashboard/mycart"
-        >
-          <button className="btn">
-            Button
-            {/* <div className="badge badge-secondary">{cart?.length || 0}</div> */}
-          </button>
-        </Link>
       </div>
-
-      {/* {user ? (
+      {user ? (
         <>
-          <button onClick={handleLogOut} className="btn btn-ghost">
+          <button onClick={handleLogOut} className="btn">
             Log Out
           </button>
         </>
       ) : (
         <>
           <li>
-            <Link to="/login">Log In</Link>
+            <Link className="btn" to="/login">
+              Log In
+            </Link>
           </li>
         </>
-      )} */}
+      )}
     </>
   );
   return (
-    <div className="navbar z-10 fixed bg-blue-900 bg-opacity-20 backdrop-blur-[25px] text-white">
-      <div className="navbar-start ">
+    <div className="navbar bg-blue-900 bg-opacity-20 backdrop-blur-[25px] text-white w-full flex align-middle items-center justify-center">
+      <div className="navbar-start md:w-[350px]">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -80,9 +79,6 @@ const Header = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{CommonNavbar}</ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@
     "description": "Embark on a mind-bending journey through the cosmos with our Sci-Fi Movie Class! Explore futuristic worlds, encounter alien species, and unravel the mysteries of advanced technology. Join us for an immersive cinematic experience that will ignite your imagination. Enroll now and unlock the secrets of the sci-fi universe!",
     "students": 30,
     "price": 1500,
+    "instructor": "Ola Murphy",
     "img": "https://iili.io/H4tieJs.jpg"
   },
   {
@@ -11,6 +12,7 @@
     "description": "Calling all thrill-seekers! Join our Adventure Movie Class and brace yourself for adrenaline-pumping excitement! Embark on epic quests, navigate treacherous landscapes, and uncover hidden treasures. Prepare for heart-stopping action and unforgettable moments. Enroll now and let your wildest adventures come to life on the big screen!",
     "students": 25,
     "price": 1500,
+    "instructor": "Dana Blevins",
     "img": "https://iili.io/H4t6myx.jpg"
   },
   {
@@ -18,6 +20,7 @@
     "description": "Step into a world of enchantment and wonder with our Animation Movie Class! Dive into vibrant, animated worlds, where imagination knows no bounds. Unleash your creativity as you learn the art of storytelling through mesmerizing visuals and captivating characters. Join us for an animated journey that will spark your imagination. Enroll now and bring your imagination to life",
     "students": 23,
     "price": 1500,
+    "instructor": "Mitch Shortn",
     "img": "https://iili.io/H4t6DYb.jpg"
   },
   {
@@ -25,6 +28,7 @@
     "description": "Get ready to laugh until your sides ache! Our Comedy Movie Class is here to tickle your funny bone. Explore the hilarious world of comedy, with slapstick antics, witty one-liners, and comedic genius. Join us for a rib-tickling experience that will have you rolling in the aisles. Enroll now and embrace the joy of laughter!",
     "students": 21,
     "price": 1500,
+    "instructor": "Lawrence Peterson",
     "img": "https://iili.io/H4t6t3u.jpg"
   },
   {
@@ -32,6 +36,7 @@
     "description": "Prepare to be terrified in our Horror Movie Class! Delve into the spine-chilling realm of fear, where nightmares come to life. Experience the heart-pounding suspense, bone-chilling thrills, and hair-raising jump scares. Face your darkest fears and learn the art of crafting cinematic terror. Enroll now, if you dare, and unleash your inner horror aficionado!",
     "students": 18,
     "price": 1500,
+    "instructor": "Leandro Washington",
     "img": "https://iili.io/H4t6yTQ.jpg"
   },
   {
@@ -39,6 +44,7 @@
     "description": "Indulge in the enchantment of love with our Romantic Movie Class! Immerse yourself in heartfelt stories, passionate embraces, and sweeping romances. Discover the art of capturing emotions on screen, as you explore the beauty of true love and heartwarming connections. Enroll now and let your heart soar through the magic of romance!",
     "students": 15,
     "price": 1500,
+    "instructor": "Cyril Estes",
     "img": "https://iili.io/H4t6bvj.jpg"
   }
 ]
