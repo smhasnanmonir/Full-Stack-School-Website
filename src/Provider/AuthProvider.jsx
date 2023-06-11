@@ -4,6 +4,7 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import { app } from "../Firebase/firebase.config";
@@ -33,6 +34,11 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  //logOut
+  const signOutFromWeb = () => {
+    return signOut(auth);
+  };
+
   //auth information
 
   const authenticationInfo = {
@@ -41,6 +47,7 @@ const AuthProvider = ({ children }) => {
     emailLogin,
     emailRegistration,
     updateInfo,
+    signOutFromWeb,
   };
   //update auth information
 

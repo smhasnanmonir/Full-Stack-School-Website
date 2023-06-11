@@ -1,12 +1,18 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Provider/AuthProvider";
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
+  const { user, signOutFromWeb } = useAuth();
+
   const handleLogOut = () => {
-    console.log("Log Out");
+    signOutFromWeb()
+      .then(() => {
+        console.log("User logged out");
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
   };
-  const { user } = useContext(AuthContext);
   console.log(user);
   const CommonNavbar = (
     <>
