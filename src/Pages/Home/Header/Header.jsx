@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
+import useUser from "../../../hooks/useUser";
 
 const Header = () => {
   const { user, signOutFromWeb } = useAuth();
@@ -14,6 +15,7 @@ const Header = () => {
       });
   };
   const [cart] = useCart();
+  const [userRole] = useUser();
   const CommonNavbar = (
     <>
       <div className="flex gap-[15px] items-center align-middle justify-center">
@@ -29,13 +31,31 @@ const Header = () => {
         >
           Instructors
         </Link>
-        <Link
-          className="text-xl font-bold hover:text-red-600"
-          to="/dashboard/cart"
-        >
-          Dashboard
-          <div className="badge badge-lg">{cart?.length || 0}</div>
-        </Link>
+        {userRole[0]?.role == "admin" ? (
+          <Link
+            className="text-xl font-bold hover:text-red-600"
+            to="/dashboard/manageClasses"
+          >
+            Dashboard
+            <div className="badge badge-lg">{cart?.length || 0}</div>
+          </Link>
+        ) : userRole[0]?.role == "instructor" ? (
+          <Link
+            className="text-xl font-bold hover:text-red-600"
+            to="/dashboard/myClass"
+          >
+            Dashboard
+            <div className="badge badge-lg">{cart?.length || 0}</div>
+          </Link>
+        ) : (
+          <Link
+            className="text-xl font-bold hover:text-red-600"
+            to="/dashboard/cart"
+          >
+            Dashboard
+            <div className="badge badge-lg">{cart?.length || 0}</div>
+          </Link>
+        )}
       </div>
       {user ? (
         <>
