@@ -21,7 +21,6 @@ const ClassCard = ({ book }) => {
         instructor,
         email: user.email,
       };
-      console.log(cartItem);
       fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {

@@ -13,7 +13,6 @@ const Classes = () => {
       .then((data) => {
         setBooks(data);
       });
-    console.log(books);
   }, []);
 
   return (

@@ -10,7 +10,6 @@ const TopClass = () => {
         setShowData(data);
       });
   }, []);
-  console.log(showData);
   return (
     <div>
       <h1 className="text-3xl text-center my-[55px]">Our Popular Classes</h1>

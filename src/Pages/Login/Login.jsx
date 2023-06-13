@@ -15,12 +15,10 @@ const Login = () => {
     emailLogin(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         navigate(from, { replace: true });
         Swal.fire("Login Successful");
       })
       .catch((error) => {
-        console.log(error);
         Swal.fire("Maybe you typed your email address or password incorrectly");
       });
   };

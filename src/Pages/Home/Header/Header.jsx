@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import useCart from "../../../hooks/useCart";
+import Swal from "sweetalert2";
 
 const Header = () => {
   const { user, signOutFromWeb } = useAuth();
 
   const handleLogOut = () => {
     signOutFromWeb()
-      .then(() => {
-        console.log("User logged out");
-      })
+      .then(() => {})
       .catch((error) => {
-        console.log("error", error);
+        Swal.fire({ error });
       });
   };
   const [cart] = useCart();
-  console.log(user);
   const CommonNavbar = (
     <>
       <div className="flex gap-[15px] items-center align-middle justify-center">

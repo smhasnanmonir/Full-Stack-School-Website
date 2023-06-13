@@ -19,12 +19,10 @@ const Registration = () => {
     emailRegistration(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         navigate(from);
         updateInfo(data.name, data.PhotoURL)
           .then(() => {
             const updated = { name: data.name, email: data.email };
-            console.log(updated);
             fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
@@ -34,7 +32,6 @@ const Registration = () => {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log(data);
                 if (data.insertedId) {
                   navigate(from, { replace: true });
                   Swal.fire("Registration Successful");

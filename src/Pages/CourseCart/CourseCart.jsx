@@ -5,12 +5,13 @@ import CourseCardTable from "./CourseCardTable";
 
 const CourseCart = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const [cart] = useCart();
-  console.log(cart);
   return (
     <div className="min-h-screen mt-[45px]">
-      <h1 className="text-3xl">Total item added: {cart.length}</h1>
+      <div className="grid place-items-center space-y-3">
+        <h1 className="text-3xl">Total item added: {cart.length}</h1>
+        <button className="btn btn-primary text-white  ">Proceed to pay</button>
+      </div>
       <div>
         {cart.map((item) => (
           <CourseCardTable key={item._id} item={item}></CourseCardTable>
