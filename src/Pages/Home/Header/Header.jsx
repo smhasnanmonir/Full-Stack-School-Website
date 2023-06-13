@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import useCart from "../../../hooks/useCart";
 
 const Header = () => {
   const { user, signOutFromWeb } = useAuth();
@@ -13,6 +14,7 @@ const Header = () => {
         console.log("error", error);
       });
   };
+  const [cart] = useCart();
   console.log(user);
   const CommonNavbar = (
     <>
@@ -29,8 +31,12 @@ const Header = () => {
         >
           Instructors
         </Link>
-        <Link className="text-xl font-bold hover:text-red-600" to="/dashboard">
+        <Link
+          className="text-xl font-bold hover:text-red-600"
+          to="/dashboard/cart"
+        >
           Dashboard
+          <div className="badge badge-lg">{cart?.length || 0}</div>
         </Link>
       </div>
       {user ? (

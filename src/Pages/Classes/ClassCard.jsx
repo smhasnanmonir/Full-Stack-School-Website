@@ -7,7 +7,7 @@ const ClassCard = ({ book }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useAuth();
-  const [cart] = useCart();
+  const [, refetch] = useCart();
   const { category, students, price, instructor, img, _id } = book;
   // handle cart
   const handleCart = (_id) => {
@@ -32,7 +32,7 @@ const ClassCard = ({ book }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            // refetch(); // refetch cart to update the number of items in the cart
+            refetch(); // refetch cart to update the number of items in the cart
             Swal.fire("Course Added to Cart");
           }
         });
