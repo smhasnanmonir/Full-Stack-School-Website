@@ -2,7 +2,10 @@ import useInstructors from "../../hooks/useInstructors";
 import MyclassCard from "./MyclassCard";
 
 const MyClass = () => {
-  const [teacherClasses] = useInstructors();
+  const [teacherClasses, refetch] = useInstructors();
+  const handleRefresh = () => {
+    refetch();
+  };
   console.log(teacherClasses);
   return (
     <div className="text-xl font-bold min-h-screen mt-[25px]">
@@ -14,6 +17,13 @@ const MyClass = () => {
           <MyclassCard key={teacher._id} teacher={teacher}></MyclassCard>
         ))}
       </div>
+      {/* {teacherClasses.length == 0 ? (
+        <button className="btn btn-primary" onClick={() => handleRefresh()}>
+          Refresh This page
+        </button>
+      ) : (
+        <h1 className="hidden">Hello</h1>
+      )} */}
     </div>
   );
 };
