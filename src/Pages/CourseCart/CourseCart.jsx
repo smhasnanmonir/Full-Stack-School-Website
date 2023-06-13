@@ -10,7 +10,7 @@ const CourseCart = () => {
   return (
     <div className="min-h-screen mt-[45px]">
       <div className="grid place-items-center space-y-3">
-        <h1 className="text-3xl">Total item added: {cart.length}</h1>
+        <h1 className="text-3xl">Total course added: {cart.length}</h1>
         <h1 className="text-3xl">Total price: {total} taka</h1>
         <button className="btn btn-primary text-white  ">Proceed to pay</button>
       </div>
