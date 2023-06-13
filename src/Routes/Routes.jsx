@@ -11,6 +11,7 @@ import ManageClasses from "../Pages/AdminComponents/ManageClasses";
 import ManageUser from "../Pages/AdminComponents/ManageUser";
 import AddClass from "../Pages/InstructorPage/AddClass";
 import MyClass from "../Pages/InstructorPage/MyClass";
+import EnrolledHistory from "../Pages/StudentComponents/PaymentHistory.jsx/EnreolledHistory";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <CourseCart></CourseCart>,
+      },
+      {
+        path: "enrolled",
+        element: <EnrolledHistory></EnrolledHistory>,
       },
       {
         path: "manageClasses",
