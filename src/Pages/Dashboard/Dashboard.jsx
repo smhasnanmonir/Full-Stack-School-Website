@@ -5,10 +5,7 @@ import useUser from "../../hooks/useUser";
 const Dashboard = () => {
   const [cart] = useCart();
 
-  // TODO: load data from the server to have dynamic isAdmin based on Data
-  const isAdmin = true;
   const [userRole] = useUser();
-  console.log(userRole[0]?.role);
 
   return (
     <div className="drawer lg:drawer-open">
@@ -67,6 +64,10 @@ const Dashboard = () => {
               </li>
             </>
           )}
+          <div className="divider"></div>
+          <li className="text-2xl font-bold">
+            <NavLink to="/">Home</NavLink>{" "}
+          </li>
         </ul>
       </div>
     </div>
