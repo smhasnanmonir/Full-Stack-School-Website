@@ -42,10 +42,10 @@ const Dashboard = () => {
             <>
               <div className="space-y-5">
                 <li className="text-2xl font-bold">
-                  <NavLink to="/dashboard/addcourse">Add a course</NavLink>
+                  <NavLink to="/dashboard/addCourse">Add a course</NavLink>
                 </li>
                 <li className="text-2xl font-bold">
-                  <NavLink to="/dashboard/">My Classes</NavLink>
+                  <NavLink to="/dashboard/myClass">My Classes</NavLink>
                 </li>
               </div>
             </>

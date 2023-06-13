@@ -7,6 +7,10 @@ import Registration from "../Pages/Registration/Registration";
 import CourseInstructors from "../Pages/CourseInstructors/CourseInstructors";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import CourseCart from "../Pages/CourseCart/CourseCart";
+import ManageClasses from "../Pages/AdminComponents/ManageClasses";
+import ManageUser from "../Pages/AdminComponents/ManageUser";
+import AddClass from "../Pages/InstructorPage/AddClass";
+import MyClass from "../Pages/InstructorPage/MyClass";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +46,22 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <CourseCart></CourseCart>,
+      },
+      {
+        path: "manageClasses",
+        element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: "manageUser",
+        element: <ManageUser></ManageUser>,
+      },
+      {
+        path: "addCourse",
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: "myClass",
+        element: <MyClass></MyClass>,
       },
     ],
   },
