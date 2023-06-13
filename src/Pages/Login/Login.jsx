@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 const Login = () => {
-  const { emailLogin } = useContext(AuthContext);
+  const { emailLogin, popUpSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -19,7 +19,21 @@ const Login = () => {
         Swal.fire("Login Successful");
       })
       .catch((error) => {
+        console.log(error);
         Swal.fire("Maybe you typed your email address or password incorrectly");
+      });
+  };
+  const handleLoginWithGoogle = () => {
+    popUpSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Login Successful");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire("Login failed", error);
       });
   };
   return (
@@ -65,6 +79,9 @@ const Login = () => {
         </div>
       </div>
       <div className="grid place-items-center gap-3 mb-[55px]">
+        <button onClick={handleLoginWithGoogle} className="btn btn-error">
+          Google Login
+        </button>
         <Link className="btn btn-secondary text-black" to="/register">
           New? Sign Up
         </Link>
