@@ -41,7 +41,7 @@ const FeedBackClass = () => {
             console.log(data);
             if (data.modifiedCount > 0) {
               refetch();
-              Swal.fire("Class Updated successfully.");
+              Swal.fire("Feed back successfully.");
             }
           });
       }
@@ -50,7 +50,7 @@ const FeedBackClass = () => {
   return (
     <div className="lg:w-[575px] w-[375px] my-[45px] mx-auto">
       <h1 className="mb-[35px] text-3xl text-center font-mono font-bold">
-        Update {category} Class
+        Feed Back {category} Class
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
