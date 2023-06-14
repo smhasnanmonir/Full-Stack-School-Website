@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { Link, useLoaderData } from "react-router-dom";
+import useManageClass from "../../hooks/useManageClass";
 import Swal from "sweetalert2";
-import useInstructors from "../../hooks/useInstructors";
 
-const UpdateMyClass = () => {
+const FeedBackClass = () => {
   const oldData = useLoaderData();
   const { _id, category } = oldData;
   const {
@@ -12,25 +12,24 @@ const UpdateMyClass = () => {
     formState: { errors },
   } = useForm();
 
-  const [, refetch] = useInstructors();
+  const [, refetch] = useManageClass();
 
   const onSubmit = (data) => {
     const sendData = {
-      students: data.students,
-      price: data.price,
+      feedback: data.feedback,
     };
     console.log(sendData);
     Swal.fire({
-      title: "Do You Really Want to Update?",
+      title: "Send This Feedback?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, update it!",
+      confirmButtonText: "Yes, Send Feed Back!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/email${_id}`, {
+        fetch(`http://localhost:5000/classes/${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -57,35 +56,20 @@ const UpdateMyClass = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-cyan-200 bg-opacity-30 rounded-xl p-5 "
       >
-        <div className="card-body grid grid-cols-2">
+        <div className="card-body">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Seat</span>
+              <span className="label-text">Feedback</span>
             </label>
             <input
-              type="number"
-              name="students"
-              {...register("students", { required: true })}
-              placeholder="Enter available seats"
+              type="text"
+              name="feedback"
+              {...register("feedback", { required: true })}
+              placeholder="Write feedback"
               className="input input-bordered"
             />
-            {errors.students && (
-              <span className="text-orange-400 mt-2">Updated seat amount</span>
-            )}
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Price</span>
-            </label>
-            <input
-              type="number"
-              name="price"
-              {...register("price", { required: true })}
-              placeholder="Enter price here"
-              className="input input-bordered"
-            />
-            {errors.price && (
-              <span className="text-orange-400 mt-2">Updated price</span>
+            {errors.feedback && (
+              <span className="text-orange-400 mt-2">Send Feed Back</span>
             )}
           </div>
 
@@ -93,16 +77,16 @@ const UpdateMyClass = () => {
             <input
               className="btn btn-primary"
               type="submit"
-              value="Update Class"
+              value="Send Feedback"
             />
           </div>
         </div>
       </form>
-      <Link to="/dashboard/myClass" className="btn btn-primary mt-[25px]">
+      <Link to="/dashboard/manageClasses" className="btn btn-primary mt-[25px]">
         Back to Dashboard
       </Link>
     </div>
   );
 };
 
-export default UpdateMyClass;
+export default FeedBackClass;

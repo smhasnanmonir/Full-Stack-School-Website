@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const useInstructors = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
   const { refetch, data: teacherClasses = [] } = useQuery({
-    queryKey: ["carts", user?.email],
+    queryKey: ["teacherClasses", user?.email],
+    enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
         `http://localhost:5000/classes/email?email=${user?.email}`

@@ -5,8 +5,10 @@
     "students": 30,
     "enrolled": 0,
     "price": 1500,
+    "status": "Pending",
     "email": "j22eqwrbv@mozmail.com",
     "instructor": "Ola Murphy",
+    "feedback": "No Feed Back Yet.",
     "img": "https://iili.io/H4tieJs.jpg"
   },
   {
@@ -15,8 +17,10 @@
     "students": 25,
     "enrolled": 0,
     "price": 1500,
+    "status": "Pending",
     "email": "qbb5st7w6@mozmail.com",
     "instructor": "Dana Blevins",
+    "feedback": "No Feed Back Yet.",
     "img": "https://iili.io/H4t6myx.jpg"
   },
   {
@@ -25,8 +29,10 @@
     "students": 23,
     "enrolled": 0,
     "price": 1500,
+    "status": "Pending",
     "email": "easju0fae@mozmail.com",
     "instructor": "Mitch Shortn",
+    "feedback": "No Feed Back Yet.",
     "img": "https://iili.io/H4t6DYb.jpg"
   },
   {
@@ -35,8 +41,10 @@
     "students": 21,
     "enrolled": 0,
     "price": 1500,
+    "status": "Pending",
     "email": "mytutanota.7yie5@aleeas.com",
     "instructor": "Lawrence Peterson",
+    "feedback": "No Feed Back Yet.",
     "img": "https://iili.io/H4t6t3u.jpg"
   },
   {
@@ -45,8 +53,10 @@
     "students": 18,
     "enrolled": 0,
     "price": 1500,
+    "status": "Pending",
     "email": "mjbgklpvv@mozmail.com",
     "instructor": "Leandro Washington",
+    "feedback": "No Feed Back Yet.",
     "img": "https://iili.io/H4t6yTQ.jpg"
   },
   {
@@ -55,8 +65,10 @@
     "students": 15,
     "enrolled": 0,
     "price": 1500,
+    "status": "Pending",
     "instructor": "Cyril Estes",
     "email": "6zxly4bxm@mozmail.com",
+    "feedback": "No Feed Back Yet.",
     "img": "https://iili.io/H4t6bvj.jpg"
   }
 ]

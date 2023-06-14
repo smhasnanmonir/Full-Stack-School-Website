@@ -13,6 +13,7 @@ import AddClass from "../Pages/InstructorPage/AddClass";
 import MyClass from "../Pages/InstructorPage/MyClass";
 import EnrolledHistory from "../Pages/StudentComponents/PaymentHistory.jsx/EnreolledHistory";
 import UpdateMyClass from "../Pages/InstructorPage/UpdateMyClass";
+import FeedBackClass from "../Pages/AdminComponents/FeedBackClass";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,12 @@ const router = createBrowserRouter([
       {
         path: "manageClasses",
         element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: "manageClasses/feedbackClass/:id",
+        element: <FeedBackClass></FeedBackClass>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/classes/${params.id}`),
       },
       {
         path: "manageUser",
