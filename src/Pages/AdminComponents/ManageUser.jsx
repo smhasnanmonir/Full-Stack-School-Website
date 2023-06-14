@@ -1,7 +1,16 @@
+import useAllUser from "../../hooks/useAllUser";
+import ManageUserCard from "./ManageUserCard";
+
 const ManageUser = () => {
+  const [allUser, refetch] = useAllUser();
   return (
-    <div>
-      <h2>This is manage user.</h2>
+    <div className="min-h-screen mt-[65px]">
+      Total user: {allUser.length}
+      <div className="grid grid-cols-3 gap-2">
+        {allUser.map((user) => (
+          <ManageUserCard key={user._id} user={user}></ManageUserCard>
+        ))}
+      </div>
     </div>
   );
 };

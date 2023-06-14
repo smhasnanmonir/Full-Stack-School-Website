@@ -22,7 +22,7 @@ const Registration = () => {
         navigate(from);
         updateInfo(data.name, data.PhotoURL)
           .then(() => {
-            const updated = { name: data.name, email: data.email };
+            const updated = { name: data.name, img: data.PhotoURL };
             fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
