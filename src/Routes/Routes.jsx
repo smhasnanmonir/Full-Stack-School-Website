@@ -14,6 +14,10 @@ import MyClass from "../Pages/InstructorPage/MyClass";
 import EnrolledHistory from "../Pages/StudentComponents/PaymentHistory.jsx/EnreolledHistory";
 import UpdateMyClass from "../Pages/InstructorPage/UpdateMyClass";
 import FeedBackClass from "../Pages/AdminComponents/FeedBackClass";
+import PrivateRoutes from "./PrivateRoutes";
+import AdminRoutes from "./AdminRoutes";
+import InstructorRoutes from "./InstructorRoutes";
+import Payment from "../Pages/Dashboard/Payment";
 
 const router = createBrowserRouter([
   {
@@ -48,37 +52,77 @@ const router = createBrowserRouter([
     children: [
       {
         path: "cart",
-        element: <CourseCart></CourseCart>,
+        element: (
+          <PrivateRoutes>
+            <CourseCart></CourseCart>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "cart/payment",
+        element: (
+          <PrivateRoutes>
+            <Payment></Payment>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "enrolled",
-        element: <EnrolledHistory></EnrolledHistory>,
+        element: (
+          <PrivateRoutes>
+            <EnrolledHistory></EnrolledHistory>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "manageClasses",
-        element: <ManageClasses></ManageClasses>,
+        element: (
+          <AdminRoutes>
+            <ManageClasses></ManageClasses>
+          </AdminRoutes>
+        ),
       },
       {
         path: "manageClasses/feedbackClass/:id",
-        element: <FeedBackClass></FeedBackClass>,
+        element: (
+          <AdminRoutes>
+            <FeedBackClass></FeedBackClass>
+          </AdminRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/classes/${params.id}`),
       },
       {
         path: "manageUser",
-        element: <ManageUser></ManageUser>,
+        element: (
+          <AdminRoutes>
+            <ManageUser></ManageUser>
+          </AdminRoutes>
+        ),
       },
       {
         path: "addCourse",
-        element: <AddClass></AddClass>,
+        element: (
+          <InstructorRoutes>
+            <AddClass></AddClass>
+          </InstructorRoutes>
+        ),
       },
       {
         path: "myClass",
-        element: <MyClass></MyClass>,
+        element: (
+          <InstructorRoutes>
+            <MyClass></MyClass>
+          </InstructorRoutes>
+        ),
       },
       {
         path: "myClass/updateClass/:id",
-        element: <UpdateMyClass></UpdateMyClass>,
+        element: (
+          <InstructorRoutes>
+            <UpdateMyClass></UpdateMyClass>
+          </InstructorRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/classes/email${params.id}`),
       },
