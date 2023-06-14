@@ -72,6 +72,8 @@ const router = createBrowserRouter([
       {
         path: "myClass/updateClass/:id",
         element: <UpdateMyClass></UpdateMyClass>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/classes/email${params.id}`),
       },
     ],
   },

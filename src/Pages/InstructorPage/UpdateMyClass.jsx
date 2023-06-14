@@ -1,14 +1,25 @@
 import { useForm } from "react-hook-form";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useInstructors from "../../hooks/useInstructors";
 
 const UpdateMyClass = () => {
+  const oldData = useLoaderData();
+  const { _id, category } = oldData;
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const [, refetch] = useInstructors();
+
   const onSubmit = (data) => {
+    const sendData = {
+      students: data.students,
+      price: data.price,
+    };
+    console.log(sendData);
     Swal.fire({
       title: "Do You Really Want to Update?",
       text: "You won't be able to revert this!",
@@ -24,12 +35,13 @@ const UpdateMyClass = () => {
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(sendData),
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
             if (data.modifiedCount > 0) {
+              refetch();
               Swal.fire("Class Updated successfully.");
             }
           });
@@ -38,7 +50,7 @@ const UpdateMyClass = () => {
   };
   return (
     <div className="lg:w-[575px] w-[375px] my-[45px] mx-auto">
-      <h1 className="mb-[35px] text-3xl text-center">Update the class</h1>
+      <h1 className="mb-[35px] text-3xl text-center">Update {category}</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-cyan-200 bg-opacity-30 rounded-xl p-5 "
@@ -84,6 +96,9 @@ const UpdateMyClass = () => {
           </div>
         </div>
       </form>
+      <Link to="/dashboard/myClass" className="btn btn-primary mt-[25px]">
+        Back to Dashboard
+      </Link>
     </div>
   );
 };
