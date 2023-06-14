@@ -16,6 +16,16 @@ const AddClass = () => {
   //onSummit
 
   const onSubmit = (data) => {
+    const sendData = {
+      category: data.category,
+      students: data.students,
+      price: data.price,
+      img: data.img,
+      email: data.email,
+      instructor: data.name,
+      status: "Pending",
+      enrolled: 0,
+    };
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -31,7 +41,7 @@ const AddClass = () => {
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(sendData),
         })
           .then((res) => res.json())
           .then((data) => {
@@ -58,6 +68,7 @@ const AddClass = () => {
               type="text"
               name="category"
               {...register("category", { required: true })}
+              placeholder="Enter Class Name"
               className="input input-bordered"
             />
             {errors.category && (
@@ -72,6 +83,7 @@ const AddClass = () => {
               type="number"
               name="students"
               {...register("students", { required: true })}
+              placeholder="Enter available seats"
               className="input input-bordered"
             />
             {errors.students && (
@@ -88,7 +100,7 @@ const AddClass = () => {
               type="number"
               name="price"
               {...register("price", { required: true })}
-              placeholder="Example: Chandler Bing"
+              placeholder="Enter price here"
               className="input input-bordered"
             />
             {errors.price && (
@@ -149,7 +161,11 @@ const AddClass = () => {
           </div>
 
           <div className="form-control mt-6">
-            <input className="btn btn-primary" type="submit" value="Register" />
+            <input
+              className="btn btn-primary"
+              type="submit"
+              value="Add Class"
+            />
           </div>
         </div>
       </form>

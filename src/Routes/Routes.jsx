@@ -12,6 +12,7 @@ import ManageUser from "../Pages/AdminComponents/ManageUser";
 import AddClass from "../Pages/InstructorPage/AddClass";
 import MyClass from "../Pages/InstructorPage/MyClass";
 import EnrolledHistory from "../Pages/StudentComponents/PaymentHistory.jsx/EnreolledHistory";
+import UpdateMyClass from "../Pages/InstructorPage/UpdateMyClass";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "myClass",
         element: <MyClass></MyClass>,
+      },
+      {
+        path: "myClass/updateClass/:id",
+        element: <UpdateMyClass></UpdateMyClass>,
       },
     ],
   },
