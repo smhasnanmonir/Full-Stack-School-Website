@@ -1,6 +1,6 @@
 const EnrolledList = ({ payment }) => {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 flex-col mb-3">
       {payment.itemName.map((item) => (
         <p className="btn btn-outline" key={payment}>
           {item}

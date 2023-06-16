@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useCart from "../../hooks/useCart";
 
 const CheckoutForm = ({ cart, price }) => {
   console.log(cart);
@@ -14,6 +15,7 @@ const CheckoutForm = ({ cart, price }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
+  const [, refetch] = useCart();
   useEffect(() => {
     if (price > 0) {
       axiosSecure.post("/create-payment-intent", { price }).then((res) => {
@@ -25,6 +27,7 @@ const CheckoutForm = ({ cart, price }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    refetch();
 
     if (!stripe || !elements) {
       return;
@@ -77,6 +80,7 @@ const CheckoutForm = ({ cart, price }) => {
         menuItems: cart.map((item) => item.menuItemId),
         status: "purchased",
         itemName: cart.map((item) => item.category),
+        itemImg: cart.map((item) => item.img),
       };
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);

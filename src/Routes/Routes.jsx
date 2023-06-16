@@ -18,6 +18,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import AdminRoutes from "./AdminRoutes";
 import InstructorRoutes from "./InstructorRoutes";
 import Payment from "../Pages/Dashboard/Payment";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },
@@ -90,7 +95,7 @@ const router = createBrowserRouter([
           </AdminRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/classes/${params.id}`),
+          fetch(`https://summerschoolserver.vercel.app/classes/${params.id}`),
       },
       {
         path: "manageUser",
@@ -124,7 +129,9 @@ const router = createBrowserRouter([
           </InstructorRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/classes/email${params.id}`),
+          fetch(
+            `https://summerschoolserver.vercel.app/classes/email${params.id}`
+          ),
       },
     ],
   },

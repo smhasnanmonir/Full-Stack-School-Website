@@ -9,7 +9,7 @@ const useAllUser = () => {
     queryKey: ["allUsers", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allUsers");
+      const res = await fetch("https://summerschoolserver.vercel.app/allUsers");
       return res.json();
     },
   });

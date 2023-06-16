@@ -9,7 +9,7 @@ const useUser = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/users?email=${user?.email}`
+        `https://summerschoolserver.vercel.app/users?email=${user?.email}`
       );
       return res.json();
     },

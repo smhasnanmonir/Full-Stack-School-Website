@@ -6,16 +6,19 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
+import { Link } from "react-router-dom";
 const Banner = () => {
   const commonSlider = (
     <>
-      <div className="space-y-3 max-w-[450px] text-white">
+      <div className="space-y-3 max-w-[450px] text-white p-10">
         <h1 className="text-5xl ">Book A class in Summer Film School Now!</h1>
         <h1 className="text-2xl font-bold ">
           Want to be a film maker or have interest in acting?
         </h1>
         <h1 className="text-xl">We have a good news for you.</h1>
-        <button className="btn btn-outline btn-info">Book Class Now</button>
+        <Link to="/class" className="btn btn-outline btn-info">
+          Book Class Now
+        </Link>
       </div>
     </>
   );

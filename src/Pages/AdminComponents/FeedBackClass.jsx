@@ -29,7 +29,7 @@ const FeedBackClass = () => {
       confirmButtonText: "Yes, Send Feed Back!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/${_id}`, {
+        fetch(`https://summerschoolserver.vercel.app/classes/${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

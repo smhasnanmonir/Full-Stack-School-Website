@@ -21,7 +21,7 @@ const MyclassCard = ({ teacher }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const userID = { id };
-        fetch(`http://localhost:5000/classes/email${_id}`, {
+        fetch(`https://summerschoolserver.vercel.app/classes/email${_id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",

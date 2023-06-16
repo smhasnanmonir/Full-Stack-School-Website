@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 
 import ClassCard from "./ClassCard";
-import useCart from "../../hooks/useCart";
 
 const Classes = () => {
   const [books, setBooks] = useState([]);
   //load data
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://summerschoolserver.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);

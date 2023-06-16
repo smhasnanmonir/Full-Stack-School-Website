@@ -9,7 +9,7 @@ const useManageClass = () => {
     queryKey: ["manageClasses", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/classes");
+      const res = await fetch("https://summerschoolserver.vercel.app/classes");
       return res.json();
     },
   });

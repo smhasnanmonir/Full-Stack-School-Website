@@ -3,9 +3,12 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Registration = () => {
   const { emailRegistration, updateInfo } = useContext(AuthContext);
+  const [axiosSecure] = useAxiosSecure();
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -19,11 +22,13 @@ const Registration = () => {
     emailRegistration(data.email, data.password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         navigate(from);
         updateInfo(data.name, data.PhotoURL)
           .then(() => {
-            const updated = { name: data.name, img: data.PhotoURL };
-            fetch("http://localhost:5000/users", {
+            const updated = { name: data.name, email: data.email };
+            console.log(updated);
+            fetch("https://summerschoolserver.vercel.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -32,6 +37,7 @@ const Registration = () => {
             })
               .then((res) => res.json())
               .then((data) => {
+                console.log(data);
                 if (data.insertedId) {
                   navigate(from, { replace: true });
                   Swal.fire("Registration Successful");

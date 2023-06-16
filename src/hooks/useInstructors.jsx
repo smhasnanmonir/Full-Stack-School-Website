@@ -10,7 +10,7 @@ const useInstructors = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/classes/email?email=${user?.email}`
+        `https://summerschoolserver.vercel.app/classes/email?email=${user?.email}`
       );
       return res.json();
     },

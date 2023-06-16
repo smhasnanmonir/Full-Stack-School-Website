@@ -21,7 +21,7 @@ const ClassCard = ({ book }) => {
         instructor,
         email: user.email,
       };
-      fetch("http://localhost:5000/carts", {
+      fetch("https://summerschoolserver.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -60,6 +60,7 @@ const ClassCard = ({ book }) => {
         <p className="text-[18px]">You will learn about {category} movies</p>
         <p className="text-[18px]">Student Enrolled: {students}</p>
         <p className="text-[18px]">Course Instructor: {instructor}</p>
+        <p className="text-[18px]">Enrollment Fee: {price}</p>
         <div className="card-actions">
           <button onClick={() => handleCart(_id)} className="btn btn-outline">
             Add To Cart

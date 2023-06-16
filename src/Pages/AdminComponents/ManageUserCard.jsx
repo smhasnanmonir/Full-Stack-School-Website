@@ -18,7 +18,7 @@ const ManageUserCard = ({ user }) => {
       confirmButtonText: "Yes, Approve it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allUsers/${id}`, {
+        fetch(`https://summerschoolserver.vercel.app/allUsers/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -50,7 +50,7 @@ const ManageUserCard = ({ user }) => {
       confirmButtonText: "Yes, Approve it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allUsers/${id}`, {
+        fetch(`https://summerschoolserver.vercel.app/allUsers/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -76,6 +76,7 @@ const ManageUserCard = ({ user }) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <p>Role: {role}</p>
+        <p>Email: {email}</p>
         <div className="flex gap-1">
           <button
             onClick={() => handleMakeAdmin(_id)}

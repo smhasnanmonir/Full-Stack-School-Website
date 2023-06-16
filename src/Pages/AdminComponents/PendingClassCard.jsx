@@ -27,7 +27,7 @@ const PendingClassCard = ({ pendingClass }) => {
       confirmButtonText: "Yes, Approve it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`https://summerschoolserver.vercel.app/classes/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -60,7 +60,7 @@ const PendingClassCard = ({ pendingClass }) => {
       confirmButtonText: "Yes, Deny it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`https://summerschoolserver.vercel.app/classes/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
