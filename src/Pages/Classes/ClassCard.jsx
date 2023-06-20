@@ -21,7 +21,7 @@ const ClassCard = ({ book }) => {
         instructor,
         email: user.email,
       };
-      fetch("https://summerschoolserver.vercel.app/carts", {
+      fetch("https://school-server-1w5r.onrender.com/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

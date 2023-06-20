@@ -36,7 +36,7 @@ const AddClass = () => {
       confirmButtonText: "Yes, add class!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("https://summerschoolserver.vercel.app/classes", {
+        fetch("https://school-server-1w5r.onrender.com/classes", {
           method: "POST",
           headers: {
             "content-type": "application/json",

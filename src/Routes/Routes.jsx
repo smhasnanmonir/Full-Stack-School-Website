@@ -95,7 +95,7 @@ const router = createBrowserRouter([
           </AdminRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`https://summerschoolserver.vercel.app/classes/${params.id}`),
+          fetch(`https://school-server-1w5r.onrender.com/classes/${params.id}`),
       },
       {
         path: "manageUser",
@@ -130,7 +130,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://summerschoolserver.vercel.app/classes/email${params.id}`
+            `https://school-server-1w5r.onrender.com/classes/email${params.id}`
           ),
       },
     ],

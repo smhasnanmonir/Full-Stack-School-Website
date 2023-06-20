@@ -9,7 +9,7 @@ const useCart = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
-        `https://summerschoolserver.vercel.app/carts?email=${user?.email}`
+        `https://school-server-1w5r.onrender.com/carts?email=${user?.email}`
       );
       return res.json();
     },

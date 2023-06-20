@@ -28,7 +28,7 @@ const Registration = () => {
           .then(() => {
             const updated = { name: data.name, email: data.email };
             console.log(updated);
-            fetch("https://summerschoolserver.vercel.app/users", {
+            fetch("https://school-server-1w5r.onrender.com/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const EnrolledHistory = () => {
 
   useEffect(() => {
     fetch(
-      `https://summerschoolserver.vercel.app/payment/email?email=${user.email}`
+      `https://school-server-1w5r.onrender.com/payment/email?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => {

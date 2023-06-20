@@ -18,7 +18,7 @@ const ManageUserCard = ({ user }) => {
       confirmButtonText: "Yes, Approve it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://summerschoolserver.vercel.app/allUsers/${id}`, {
+        fetch(`https://school-server-1w5r.onrender.com/allUsers/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -50,7 +50,7 @@ const ManageUserCard = ({ user }) => {
       confirmButtonText: "Yes, Approve it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://summerschoolserver.vercel.app/allUsers/${id}`, {
+        fetch(`https://school-server-1w5r.onrender.com/allUsers/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

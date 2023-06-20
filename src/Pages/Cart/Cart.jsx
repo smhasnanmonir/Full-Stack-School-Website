@@ -5,7 +5,7 @@
 //   const { user } = useContext(AuthContext);
 //   const [userCart, setUserCart] = useState([]);
 //   useEffect(() => {
-//     fetch(`https://summerschoolserver.vercel.app/carts?${user?.email}`)
+//     fetch(`https://school-server-1w5r.onrender.com/carts?${user?.email}`)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         .log(data);

@@ -10,7 +10,7 @@ const useInstructors = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
-        `https://summerschoolserver.vercel.app/classes/email?email=${user?.email}`
+        `https://school-server-1w5r.onrender.com/classes/email?email=${user?.email}`
       );
       return res.json();
     },

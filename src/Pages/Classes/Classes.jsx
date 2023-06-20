@@ -6,7 +6,7 @@ const Classes = () => {
   const [books, setBooks] = useState([]);
   //load data
   useEffect(() => {
-    fetch("https://summerschoolserver.vercel.app/classes")
+    fetch("https://school-server-1w5r.onrender.com/classes")
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);

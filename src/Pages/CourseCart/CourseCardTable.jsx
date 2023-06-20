@@ -19,7 +19,7 @@ const CourseCardTable = ({ item }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const userID = { id };
-        fetch(`https://summerschoolserver.vercel.app/carts/${id}`, {
+        fetch(`https://school-server-1w5r.onrender.com/carts/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",

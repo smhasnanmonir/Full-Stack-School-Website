@@ -30,7 +30,7 @@ const UpdateMyClass = () => {
       confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://summerschoolserver.vercel.app/classes/email${_id}`, {
+        fetch(`https://school-server-1w5r.onrender.com/classes/email${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
